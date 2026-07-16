@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$PROJECT_DIR$/catalog-service/src/test/resources/test-data.sql" value="47c49988-d1cd-4613-81d5-c86b94d53f68" />
+  </component>
+</project>
