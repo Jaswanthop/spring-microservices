@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -42,5 +43,9 @@ public class ProductService {
                 productsPage.hasNext(),
                 productsPage.hasPrevious());
         return pagedResult;
+    }
+
+    public Optional<Product> getProductByCode(String code){
+        return  productRepo.findBycode(code).map(ProductMapper::toProduct);
     }
 }
