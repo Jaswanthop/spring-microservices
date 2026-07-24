@@ -1,0 +1,19 @@
+name: bookstore
+
+services:
+  catalog-service:
+    image: jaswanth2006/bookstore-catalog-service:0.0.1-SNAPSHOT
+    container_name: catalog-service
+    ports:
+      - "8081:8081"
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/catalogdb
+      DB_USERNAME: catalog
+      DB_PASSWORD: catalog
+    depends_on:
+      postgres:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 700m
